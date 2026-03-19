@@ -1,0 +1,12 @@
+name: factorize_job
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install sympy
+      - run: echo "1234567890123456789012345678901234564642787561946758475373767546760504543482751843799404385446458181840404642181846764218184643184642571846431318187282094643458146431849764528464451878901234567890" | python main.py
